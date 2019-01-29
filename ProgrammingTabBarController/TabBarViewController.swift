@@ -27,9 +27,9 @@ class TabBarViewController: UITabBarController,UITabBarControllerDelegate {
         //
         let tab0 = UINavigationController(rootViewController: tab0VC)
         //
-        let tabItem0 = UITabBarItem(title: "bar0", image: nil, tag: 0)
-        let tabItem1 = UITabBarItem(title: "bar1", image: nil, tag: 1)
-        let tabItem2 = UITabBarItem(title: "bar2", image: nil, tag: 2)
+        let tabItem0 = UITabBarItem(title: "view0", image: nil, tag: 0)
+        let tabItem1 = UITabBarItem(title: "view1", image: nil, tag: 1)
+        let tabItem2 = UITabBarItem(title: "view2", image: nil, tag: 2)
         //
         let tabbar = tabBarController?.tabBar
         tabbar?.barTintColor = .black
