@@ -1,6 +1,6 @@
 Swift
 
 # ProgrammingTabBarController
-No storybord included,to add a tabBarController with one navigationController by programming.
+To add a tabBarController with one navigationController, no Storyboard, by programming.
 
 
