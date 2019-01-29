@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("viewDidLoad begins here.")
         getScreenUIdata()
         self.view.backgroundColor = .yellow
         self.view.addSubview(button1)
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         button2.addTarget(self, action: #selector(presentViewController2), for: .touchUpInside)
         self.view.addSubview(button2)
     }
+    
     
     @objc func presentTab() {
         print("showing tab")
@@ -66,7 +68,8 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        button1.frame = CGRect(x: sideGap, y: sideGap * 10, width: screenWidth! - sideGap * 2, height: 40)
+        print("viewWillLayoutSubviews begins here.")
+        button1.frame = CGRect(x: sideGap, y: statusBarHeight! + navHeight! + sideGap * 5, width: screenWidth! - sideGap * 2, height: 40)
     }
     
     func getScreenUIdata(){
@@ -80,12 +83,14 @@ class ViewController: UIViewController {
             navHeight = navgationController.navigationBar.frame.size.height
             print("navigationBar height \(String(describing: navHeight)) ")
         } else {
+            navHeight = CGFloat(0)
             print("There's no navigationBar.")
         }
         if let tabBarController = self.tabBarController {
             tabHeight = tabBarController.tabBar.frame.size.height
             print("tabBar height \(String(describing: tabHeight))")
         } else {
+            tabHeight = CGFloat(0)
             print("There's no tabBar.")
         }
     }

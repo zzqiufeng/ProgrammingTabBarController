@@ -10,15 +10,25 @@ import UIKit
 
 class OneViewController: UIViewController {
 
+    let screenSize:CGRect = UIScreen.main.bounds
+    var screenWidth:CGFloat?
+    var screenHeight:CGFloat?
+    var statusBarHeight:CGFloat?
+    var navHeight:CGFloat?
+    var tabHeight:CGFloat?
+    let sideGap = CGFloat(15)
+    
     let colors : [UIColor] = [.red,.green,.blue,.yellow,.lightGray,.white,.cyan,.orange,.brown]
     static var viewControllerLevel = 1
     var goneToNext = false
     var button = UIButton()
+    var infoLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        getScreenUIdata()
         let color = Int.random(in: 0 ..< colors.count)
         self.view.backgroundColor = colors[color]
         print("This is \(OneViewController.viewControllerLevel) level Tab1ViewController")
@@ -54,6 +64,30 @@ class OneViewController: UIViewController {
             self.view.addSubview(button)
         }
     }
+    
+    func getScreenUIdata(){
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        statusBarHeight = UIApplication.shared.statusBarFrame.height
+        print("screen size width \(String(describing: screenWidth))")
+        print("screen size height \(String(describing: screenHeight))")
+        print("status bar height \(String(describing: statusBarHeight))")
+        if let navgationController = self.navigationController {
+            navHeight = navgationController.navigationBar.frame.size.height
+            print("navigationBar height \(String(describing: navHeight)) ")
+        } else {
+            navHeight = CGFloat(0)
+            print("There's no navigationBar.")
+        }
+        if let tabBarController = self.tabBarController {
+            tabHeight = tabBarController.tabBar.frame.size.height
+            print("tabBar height \(String(describing: tabHeight))")
+        } else {
+            tabHeight = CGFloat(0)
+            print("There's no tabBar.")
+        }
+    }
+    
     
 
     /*
