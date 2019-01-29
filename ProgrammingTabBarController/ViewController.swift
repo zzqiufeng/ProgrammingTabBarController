@@ -98,9 +98,9 @@ func showTabBar() -> UITabBarController{
     let tab1 = TwoViewController()
     let tab2 = ThreeViewController()
     //
-    let tabItem0 = UITabBarItem(title: "bar0", image: nil, tag: 0)
-    let tabItem1 = UITabBarItem(title: "bar1", image: nil, tag: 1)
-    let tabItem2 = UITabBarItem(title: "bar2", image: nil, tag: 2)
+    let tabItem0 = UITabBarItem(title: "view0", image: nil, tag: 0)
+    let tabItem1 = UITabBarItem(title: "view1", image: nil, tag: 1)
+    let tabItem2 = UITabBarItem(title: "view2", image: nil, tag: 2)
     //
     tab0.tabBarItem = tabItem0
     tab1.tabBarItem = tabItem1
